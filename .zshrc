@@ -33,6 +33,7 @@ export GPG_TTY=$(tty)
     antibody bundle ohmyzsh/ohmyzsh path:plugins/jsontools
     antibody bundle ohmyzsh/ohmyzsh path:plugins/jump
     antibody bundle ohmyzsh/ohmyzsh path:plugins/kubectl
+    antibody bundle ohmyzsh/ohmyzsh path:plugins/macos
     # antibody bundle ohmyzsh/ohmyzsh path:plugins/nmap
     antibody bundle ohmyzsh/ohmyzsh path:plugins/npm
     # antibody bundle ohmyzsh/ohmyzsh path:plugins/pass
