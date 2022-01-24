@@ -1,0 +1,20 @@
+- clean: [
+    '~',
+    '~/.config'
+]
+
+- link:
+    ~/.dircolors: .dircolors
+    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: .gitignore_global
+    ~/.tmux: .tmux
+    ~/.tmux.conf: .tmux.conf
+    ~/.config/kitty: kitty
+    ~/.config/alacritty: alacritty
+    ~/.config/nvim: nvim
+    ~/.zshrc: .zshrc
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [~/.tmux/plugins/tpm/scripts/install_plugins.sh >/dev/null 2>&1, Installing tmux plugins]
+    - ["vim +PackerSync +qa", Installing and updating plugins]
