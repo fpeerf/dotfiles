@@ -78,6 +78,21 @@ return packer.startup({function(use)
   use "rcarriga/nvim-notify"
   use "vimwiki/vimwiki"
   use {
+    "chrisbra/unicode.vim",
+    event = "VimEnter",
+  }
+  -- Asynchronous command execution
+  use {
+    "skywind3000/asyncrun.vim",
+    opt = true,
+    cmd = { "AsyncRun" },
+  }
+  -- Repeat vim motions
+  use {
+    "tpope/vim-repeat",
+    event = "VimEnter",
+  }
+  use {
     "wellle/targets.vim",
     event = "VimEnter",
   }
