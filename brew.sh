@@ -148,6 +148,7 @@ sudo port install xorg-server
 python3 -m pip install numpy
 python3 -m pip install pandas
 pip3 install --user requests
+pip3 install --upgrade mackup
 pip3 install black flake8
 pip3 install neovim
 # pip3 install powerline-status
