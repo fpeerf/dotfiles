@@ -109,6 +109,8 @@ local kind_icons = {
 -- }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
+local WIDE_HEIGHT = 40
+
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -173,19 +175,19 @@ cmp.setup {
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       -- NOTE: order matters
       vim_item.menu = ({
-        -- nvim_lsp = "[LSP]",
-        -- nvim_lua = "[Nvim]",
-        -- luasnip = "[Snippet]",
-        -- buffer = "[Buffer]",
-        -- path = "[Path]",
-        -- emoji = "[Emoji]",
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[Nvim]",
+        luasnip = "[Snippet]",
+        buffer = "[Buffer]",
+        path = "[Path]",
+        emoji = "[Emoji]",
 
-        nvim_lsp = "",
-        nvim_lua = "",
-        luasnip = "",
-        buffer = "",
-        path = "",
-        emoji = "",
+        -- nvim_lsp = "",
+        -- nvim_lua = "",
+        -- luasnip = "",
+        -- buffer = "",
+        -- path = "",
+        -- emoji = "",
       })[entry.source.name]
       return vim_item
     end,
@@ -203,10 +205,13 @@ cmp.setup {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-  documentation = false,
-  -- documentation = {
-  -- 	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  -- },
+  -- documentation = false,
+  documentation = {
+  	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    winhighlight = 'NormalFloat:NormalFloat,FloatBorder:NormalFloat',
+    maxwidth = math.floor((WIDE_HEIGHT * 2) * (vim.o.columns / (WIDE_HEIGHT * 2 * 16 / 9))),
+    maxheight = math.floor(WIDE_HEIGHT * (WIDE_HEIGHT / vim.o.lines)),
+  },
   experimental = {
     ghost_text = true,
     native_menu = false,
