@@ -319,5 +319,5 @@ export LANG=en_US.UTF-8
 # export VI_MODE_SET_CURSOR=true
 # VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 # . /usr/local/lib/python3.9/site-packages/powerline/bindings/zsh/powerline.zsh
-export TERM=alacritty
+# export TERM=alacritty
 export LC_ALL=en_US.UTF-8
